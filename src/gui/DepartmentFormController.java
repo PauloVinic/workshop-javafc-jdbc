@@ -93,8 +93,8 @@ public class DepartmentFormController implements Initializable {
 		
 		obj.setId(Utils.tryParseToInt(txtId.getText()));
 		
-		if (txtName.getText() == null || txtName.getText().trim().equals(" ")) {
-			exception.addError("name", "Field con't be empty");
+		if (txtName.getText() == null || txtName.getText().trim().equals("")) {
+			exception.addError("name", "Field can't be empty");
 		}
 		obj.setName(txtName.getText());
 		
@@ -105,6 +105,7 @@ public class DepartmentFormController implements Initializable {
 		return obj;
 	}
 
+	@FXML
 	public void onBtCancelAction(ActionEvent event) {
 		Utils.currentStage(event).close();
 	}
